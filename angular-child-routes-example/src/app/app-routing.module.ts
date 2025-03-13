@@ -1,8 +1,9 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { ParentComponent } from './parent/parent.component';
 import { ChildOneComponent } from './child-one/child-one.component';
 import { ChildTwoComponent } from './child-two/child-two.component';
-export const routes: Routes = [
+const routes: Routes = [
 {
 path: 'parent',
 component: ParentComponent,
@@ -28,3 +29,8 @@ redirectTo: '/parent',
 pathMatch: 'full'
 }
 ];
+@NgModule({
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
+})
+export class AppRoutingModule { }

@@ -1,19 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanActivateFn } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AdminGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // Add your authentication logic here
-    return true; // Change this to actual authentication check
-  }
-}
-
-
-
+export const AdminGuard: CanActivateFn = (route, state) => {
+  const isAuthenticated = false; // Change this logic as needed
+  return isAuthenticated;
+};
