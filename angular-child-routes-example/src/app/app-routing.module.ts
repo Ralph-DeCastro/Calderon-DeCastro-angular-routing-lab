@@ -30,7 +30,7 @@ pathMatch: 'full'
 }
 ];
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
-})
-export class AppRoutingModule { }
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
