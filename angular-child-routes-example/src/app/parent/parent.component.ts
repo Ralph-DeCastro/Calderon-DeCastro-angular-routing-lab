@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';  // Import RouterModule
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';  // Import RouterModule
 
 @Component({
   selector: 'app-parent',
