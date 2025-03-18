@@ -45,7 +45,7 @@ pathMatch: 'full'
 ];
 // NgModule and exports remain if using app-routing.module.ts
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
-})
-export class AppRoutingModule { }
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+    })
+    export class AppRoutingModule { }
