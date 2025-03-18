@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angul
 
 @Component({
   selector: 'app-parent',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.css'
 })
