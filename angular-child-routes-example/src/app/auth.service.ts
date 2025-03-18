@@ -8,4 +8,4 @@ export class AuthService {
         console.log('AuthService.isAdmin() called - returning TRUE for demo');
         return true; // TEMPORARILY RETURN TRUE FOR TESTING ADMIN GUARD ALLOWING ACCESS
         }
-    }
+
