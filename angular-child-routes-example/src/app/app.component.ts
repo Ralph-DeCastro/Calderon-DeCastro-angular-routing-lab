@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,RouterLinkActive, FormsModule,NgIf],
+  imports: [RouterOutlet,RouterLink,RouterLinkActive,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -21,14 +22,14 @@ export class AppComponent {
   email = '';
   age = '';
   religion = '';
-  isModalOpen = false;
+  isModalVisible: boolean = false;
 
-  openModal() {
-    this.isModalOpen = true;
+  openModal(): void {
+    this.isModalVisible = true;
   }
 
-  closeModal() {
-    this.isModalOpen = false;
+  closeModal(): void {
+    this.isModalVisible = false;
   }
 }
 
