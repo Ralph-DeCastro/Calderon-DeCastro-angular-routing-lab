@@ -10,14 +10,18 @@ import { MatDialogRef } from '@angular/material/dialog';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
 export class AppComponent {
   title = 'angular-child-routes-example';
   name = '';
   email = '';
   age = '';
   religion = '';
-  
-  
   isModalVisible: boolean = false;
 
   openModal(): void {
@@ -27,5 +31,6 @@ export class AppComponent {
   closeModal(): void {
     this.isModalVisible = false;
   }
-  
 }
+
+
