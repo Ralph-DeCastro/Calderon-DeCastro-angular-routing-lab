@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-form',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule], // ✅ Required for form handling
   templateUrl: './product-form.component.html',
-  styleUrl: './product-form.component.css'
+  styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent {
-
-}
+export class ProductFormComponent { }

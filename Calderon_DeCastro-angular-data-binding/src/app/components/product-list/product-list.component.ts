@@ -2,29 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/models.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule, FormsModule], // ✅ Fix for *ngIf, *ngFor, [(ngModel)]
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  // Properties
   products: Product[] = [];
   filteredProducts: Product[] = [];
   categories: string[] = [];
   isLoading = true;
   isDeleting = false;
 
-  // Properties for two-way binding
   searchTerm = '';
   filterCategory = '';
   sortOption = 'name';
 
-  constructor(
-    private productService: ProductService,
-    private router: Router
-  ) {}
+  constructor(private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -36,7 +35,7 @@ export class ProductListComponent implements OnInit {
       this.products = products;
       this.filteredProducts = [...products];
       this.categories = [...new Set(products.map(p => p.category))];
-      this.sortProducts(); // Apply initial sorting
+      this.sortProducts();
       this.isLoading = false;
     });
   }
@@ -47,7 +46,7 @@ export class ProductListComponent implements OnInit {
       const categoryMatch = !this.filterCategory || product.category === this.filterCategory;
       return nameMatch && categoryMatch;
     });
-    this.sortProducts(); // Re-apply sorting after filtering
+    this.sortProducts();
   }
 
   clearSearch(): void {
@@ -70,9 +69,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getRatingColor(rating: number): string {
-    if (rating >= 4.5) return 'green';
-    if (rating >= 3.5) return 'orange';
-    return 'red';
+    return rating >= 4.5 ? 'green' : rating >= 3.5 ? 'orange' : 'red';
   }
 
   getStarsArray(rating: number): number[] {
