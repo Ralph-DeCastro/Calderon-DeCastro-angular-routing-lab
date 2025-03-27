@@ -4,13 +4,13 @@
     top: 60px; /* Push down below the header */
     left: 0;
     width: 250px;
-    height: calc(100vh - 100px); /* Ensure it does not overlap footer */
+    height: calc(100vh - 60px); /* Ensure it fills the screen below the header */
     background: linear-gradient(135deg, #2c3e50, #4ca1af);
     color: white;
     padding-top: 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    z-index: 50; /* Lower than header (200) and footer (200) */
+    z-index: 100; /* Ensure the sidebar is behind the header */
     overflow-y: auto; /* Allows scrolling if needed */
 }
 
